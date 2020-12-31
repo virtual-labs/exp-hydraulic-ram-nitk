@@ -1,13 +1,257 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-		<!-- Your code goes here-->
+<meta charset="UTF-8">
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+<title>SOLVE</title>
+<link rel="stylesheet" href="css/hydr.css" />
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>-->
+<script type="text/javascript" src= "js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src= "js/new1.js"></script>
+
+<script type="text/javascript" src= "js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src= "js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src= "js/ej.web.all.js"></script>
+
+<!--Stylesheet to display Math functions -->
+<link href="css/mathstyle.css" rel="stylesheet" />
+<script>
+var simsubscreennum=0;
+var temp=0;
+var lnt=0;
+var values=[[2.9,0.5,5,10,64,0.00014,10,31,0.00152,0.724,1.724,14.68,6.74],
+			[2.9,1,10,10,95,0.000095,10,30.5,0.00154,2.448,3.448,20.036,15.1],
+			[2.9,1.5,15,10,123,0.000072,10,30,0.00156,4.172,5.172,23.038,19.45],
+			[2.9,2,20,10,156,0.000058,10,30,0.00156,5.896,6.897,24.631,21.84],
+			[2.9,2.5,25,10,170,0.000053,10,30,0.00156,7.620,8.621,28.221,25.79],
+			[2.9,3,30,10,210,0.000043,10,29.5,0.00159,9.345,10.345,27.207,25.24],]
+
+var lnt=0;
+// <!-- $(function() -->
+// <!-- { -->
+// 		<!-- Tipped.create('#can4-6'); -->
+// 		<!-- Tipped.create('#can5-6'); -->
+// 		<!-- Tipped.create('#can6-5'); -->
+// 		<!-- Tipped.create('#can6-6'); -->
+// 		<!-- Tipped.create('#can6-7'); -->
+// 		<!-- Tipped.create('#can6-8'); -->
+//
+// <!-- }); -->
+</script>
+</head>
+
+
+
+<body style="margin:0">
+<!--Simulation Screen start		-->
+<div id="simscreen">
+
+<!--Title of Simulation		-->
+<div id="title"><h4>Performance Characteristics of Hydraulic Ram</h4></div>
+
+<!--SubScreen Home	-->
+<div class="simsubscreen" id="canvas0">
+<h4 class="incanvas" >Objective</h4>
+<p class="incanvas" >To conduct the performance test on hydraulic ram and to plot the operating characteristics.
+</p>
+<h4 class="incanvas" >Apparatus used:</h4>
+<p class="incanvas" >Hydraulic Ram setup, Useful Water Tank, Waste Water Tank, Stop Watch, Measuring Scale etc.</p>
+<img style="position: absolute; left: 80px; top: 125px;z-index:1" src="images/1.png"/>
+<img id="" style="position: absolute; left: 400px; top: 395px;z-index:1" src="images/tap.png" />
+<br>&nbsp;<span class="tooltip" style="border-bottom:1px dotted ; color:red;text-align:justify">Description
+	<span class="tooltiptext">
+		<strong style="color:red">Suction Head</strong>: Suction head is the term used to describe liquid pressure at pump suction in terms of height of liquid column.<br><br>
+		<strong style="color:red">Devivery Head</strong>: is defined as the work that needs to be performed by the pump to pump the medium with reference to a defined unit of weight.<br><br>
+		<strong style="color:red">Total Dynamic Head (TDH)</strong>: is the total equivalent height that a fluid is to be pumped, taking into account friction losses in the pipe.<br><br>
+		<strong style="color:red">Actual Discharge</strong>: The actual discharge of an axial piston pump is usually defined as the difference between the theoretical pump discharge and the total leakage. <br><br>
+		<strong style="color:red">Rankines Efficiency</strong>: is  defined based on the fact that q amount of water is lifted by a height (h2 - h1 = h) by utilizing (Q-q) amount of water.<br><br>
+	</span>
+	</span>
+
+</div>
+
+
+
+
+<!--Step1	-->
+
+<div class="simsubscreen" id="canvas1" style="visibility:hidden">
+<strong id="titlestep" class="incanvas">STEP </strong><span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span><p id="pumptext" class="steptext"> Start the pump by pressing the start button.</p>
+<img id="can1-1" style="position: absolute; left: 50px; top: 130px;" src="images/1.1.png">
+<img id="can1-2" style="position: absolute; left: 600px; top: 125px;" src="images/board.png">
+<img id="can1on" style="position: absolute; left: 635px; top: 160px;" src="images/on.png">
+<img id="can1off" style="position: absolute; left: 635px; top: 185px;" src="images/off.png">
+<img id="onarm" src="images/hand.png" style="margin-left: -50px; margin-top: -50px; position: absolute; visibility: hidden; left: 689px; top: 215px;">
+<img id="" style="position: absolute; left: 270px; top: 380px;" src="images/tap.png" />
+</div>
+<!--Step2	-->
+
+<div class="simsubscreen" id="canvas2" style="visibility:hidden">
+
+<strong id="titlestep" class="incanvas">STEP &nbsp;</strong><span class="circlebg" id="stepnumber">&nbsp;2&nbsp;</span><p id="pumptext-2" class="steptext">&nbsp;Open the inlet valve and allow the water to flow.</p>
+<img id="can2-1" style="position: absolute; left: 50px; top: 130px;" src="images/1.1.png">
+<img id="can2-2" style="position: absolute; left: 535px; top: 160px;" src="images/delivery_valve.png">
+<img id="can2-3" style="position: absolute; left: 575px; top: 235px;cursor:pointer" src="images/valvearm.png">
+<img id="can2-5" style="position: absolute; left: 83px; top: 170px;cursor:crosshair;" src="images/nob-hyd.png">
+
+<img id="" style="position: absolute; left: 270px; top: 380px;" src="images/tap.png" />
+
+<p id="can2-4" style="position:absolute;top: 400px; left:370px"> Supply head =   </p>
+
+</div>
+
+<!--Step3	-->
+<div class="simsubscreen" id="canvas3" style="visibility:hidden">
+<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;3&nbsp;</span><p class="steptext">&nbsp;Open the delivery valve and find the delivery pressure.</p>
+<img id="can3-1" style="position: absolute; left: 10px; top: 130px;" src="images/1.1.png">
+<img id="can3-2" style="position: absolute; left: 335px; top: 160px;" src="images/Inlet valve_horizontal_1.png">
+<img id="can3-3" style="position: absolute; left: 330px; top: 196px;" src="images/Inlet valve_horizontal.png">
+<img id="can3-4" style="position: absolute; left: 530px; top: 125px;" src="images/supply head.png">
+<img id="can3-5" style="position: absolute; left: 585px; top: 198px;" src="images/arrow.png">
+<img id="can3-8" style="position: absolute; left: 125px; top: 244px;cursor:crosshair;" src="images/nob-hyd_2.png">
+
+<img id="" style="position: absolute; left: 240px; top: 380px;" src="images/tap.png" />
+
+<p id="can3-6" style="position:absolute;top: 400px; left:370px"> Delivery pressure =  </p>
+<p id="can3-7" style="position:absolute;top: 430px; left:370px"> Delivery head =  </p>
+
+</div>
+
+<!--Step4	-->
+<div class="simsubscreen" id="canvas4" style="visibility:hidden">
+<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;4&nbsp;</span><p class="steptext-2">&nbsp;Determine the waste water discharge by noting the time required by water to fill the collecting tank upto 10cm height.</p>
+<img id="can4-1" style="position: absolute; left: 50px; top: 130px;" src="images/1.1.png">
+<img id="can4-2" style="position: absolute; left: 535px; top: 160px;" src="images/stopwatch.1.png">
+<img id="can4-3" style="position: absolute; left: 603px; top: 230px;" src="images/stopwatch_needle.png">
+
+<img id="can4-7" style="position: absolute; left: 403px; top: 365px;" src="images/wtrblu.png">
+<img id="can4-8" style="position: absolute; left: 403px; top: 380px;" src="images/wtrblank.png">
+
+<img id="can4-4" style="position: absolute; left: 403px; top: 95px;" src="images/measuring tube.png">
+
+<img id="" style="position: absolute; left: 270px; top: 385px;" src="images/tap.png" />
+<p  style="position:absolute; left:110px; top: 455px; "> Waste water tank </p>
+
+<p id="can4-5" style="position:absolute;top: 400px; left:350px"> Time required by water to fill 10cm height (H)=  </p>
+<!-- <p id="can4-6" style="position:absolute;top: 430px; left:350px"> Discharge of waste water =  </p> -->
+<div class="formulaTooltip" style="position:absolute;top: 430px; left:350px">
+    <p id="can4-6" style="font-family:verdana;font-size:14px;">Discharge of waste water = </p>
+    <span class="formulaTooltipText" style="width: 250px">Q (m<sup>3</sup>/sec) = <span class="frac"><sup>(A &times; H)</sup><span>&frasl;</span><sub>Time</sub></span> </span>
+</div>
+<span class="tooltip" style="border-bottom:1px dotted ; color:red;position: absolute; left: 0px; top: 70px">Dimension of waste water tank
+	<span class="tooltiptext">
+		<span>Length = 77 cm</span><br>
+		<span>Breadth = 61 cm</span><br>
+		<span>Area (A) = Length * Breadth = 4697 cm<sup>2</sup> </span>
+	</span>
+	</span>
+</div>
+
+
+<!--Step5	-->
+<div class="simsubscreen" id="canvas5" style="visibility:hidden">
+<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;5&nbsp;</span><p class="steptext">&nbsp;Determine the useful water discharge by calculating the time required by water to collect upto 10cm in the collecting tank.</p>
+<img id="can5-1" style="position: absolute; left: 50px; top: 130px;" src="images/1.1.png">
+<img id="can5-2" style="position: absolute; left: 535px; top: 160px;" src="images/stopwatch.1.png">
+<img id="can5-3" style="position: absolute; left: 603px; top: 230px;" src="images/stopwatch_needle.png">
+
+<img id="can5-7" style="position: absolute; left: 403px; top: 365px;" src="images/wtrblu.png">
+<img id="can5-8" style="position: absolute; left: 403px; top: 380px;" src="images/wtrblank.png">
+
+<img id="can5-4" style="position: absolute; left: 403px; top: 95px;" src="images/measuring tube.png">
+
+<img id="" style="position: absolute; left: 270px; top: 385px;" src="images/tap.png" />
+<p  style="position:absolute; left:0px; top: 425px; "> Useful water tank </p>
+
+<p id="can5-5" style="position:absolute;top: 400px; left:350px"> Time required by water to fill 10cm height (H) =  </p>
+<!-- <p id="can5-6" style="position:absolute;top: 430px; left:350px"> Discharge of useful water =  </p> -->
+<div class="formulaTooltip" style="position:absolute;top: 430px; left:350px">
+    <p id="can5-6" style="font-family:verdana;font-size:14px;"> Discharge of useful water =  </p>
+    <span class="formulaTooltipText" style="width: 250px">q (m<sup>3</sup>/sec) = <span class="frac"><sup>(A &times; H)</sup><span>&frasl;</span><sub>Time</sub></span></span>
+</div>
+<span class="tooltip" style="border-bottom:1px dotted ; color:red;position: absolute; left: 0px; top: 70px">Dimension of useful water tank
+	<span class="tooltiptext">
+		<span>Length = 30 cm</span><br>
+		<span>Breadth = 30 cm</span><br>
+		<span>Area (A) = Length * Breadth = 900 cm<sup>2</sup> </span>
+	</span>
+	</span>
+</div>
+
+<!--Step6	-->
+<div class="simsubscreen" id="canvas6" style="visibility:hidden">
+<strong class="incanvas" style="position:absolute;top: 30px; left:50px"><h2>Observation</h2></strong>
+<p id="can6-1" style="position:absolute;top: 80px; left:220px">Supply head (H<sub>s</sub>) = 2.9m</p>
+<p id="can6-2" style="position: absolute; top: 110px; left: 220px;"> Delivery head (H<sub>d</sub>) = </p>
+<p id="can6-3" style="position:absolute;top: 140px; left:220px"> Discharge of waste water (Q) = </p>
+<p id="can6-4" style="position: absolute; top: 170px; left: 220px;"> Discharge of useful water =  </p>
+
+<strong class="incanvas" style="position:absolute;top: 250px; left:50px"><h2>Result</h2></strong>
+<div class="formulaTooltip" style="position:absolute;top: 300px; left:220px">
+    <p id="can6-5" style="font-family:verdana;font-size:14px;"> D'Aubuissons efficiency = </p>
+    <span class="formulaTooltipText" style="width: 250px">&eta;<sub>A</sub>(%) = <span class="frac"><sup>(q &times; H<sub>d</sub>)</sup><span>&frasl;</span><sub>(Q+q)H<sub>s</sub> </sub></span> </span>
+</div>
+<div class="formulaTooltip" style="position:absolute;top: 330px; left:220px">
+    <p id="can6-6" style="font-family:verdana;font-size:14px;"> Rankine's efficiency =  </p>
+    <span class="formulaTooltipText" style="width: 250px">&eta;<sub>R</sub> (%)  = <span class="frac"><sup>q (H<sub>d</sub>-H<sub>s</sub>)</sup><span>&frasl;</span><sub>(Q &times; H<sub>s</sub>)</sub></span> </span>
+</div>
+<div class="formulaTooltip" style="position:absolute;top: 360px; left:220px">
+    <p id="can6-7" style="font-family:verdana;font-size:14px;">Lift to fall ratio [<span class="frac"><sup>(H<sub>d</sub> - H<sub>s</sub> )</sup><span>&frasl;</span><sub>H<sub>s</sub></sub></span>] = </p>
+    <span class="formulaTooltipText" style="width: 250px">Lift to Fall Ratio =<span class="frac"><sup>(H<sub>d</sub> - H<sub>s</sub> )</sup><span>&frasl;</span><sub>H<sub>s</sub></sub></span></span>
+</div>
+<div class="formulaTooltip" style="position:absolute;top: 390px; left:220px">
+    <p id="can6-8" style="font-family:verdana;font-size:14px;">Lift to fall ratio [<span class="frac"><sup>H<sub>d</sub></sup><span>&frasl;</span><sub>H<sub>s</sub></sub></span>]</p>
+    <span class="formulaTooltipText" style="width: 250px">Lift to Fall Ratio =<span class="frac"><sup>H<sub>d</sub></sup><span>&frasl;</span><sub>H<sub>s</sub></sub></span></span>
+</div>
+<!-- <p id="can6-5" style="position:absolute;top: 300px; left:220px"> D'Aubuissons efficiency =  </p> -->
+<!-- <p id="can6-6" style="position:absolute;top: 330px; left:220px"> Rankine's efficiency =  </p> -->
+<!-- <p id="can6-7" style="position:absolute;top: 360px; left:220px"> Lift to fall ratio [(H<sub>d</sub> - H<sub>s</sub> ) / H<sub>s</sub>] =  </p> -->
+<!-- <p id="can6-8" style="position:absolute;top: 390px; left:220px"> Lift to fall ratio (H<sub>d</sub> / H<sub>s</sub>)=  </p> -->
+
+</div>
+
+<div class="simsubscreen" id="canvas7" style="visibility:hidden;">
+<h1 id="skip" style="position:absolute; left:0px; top:200px; color:grey; text-align:center;padding:10px;">Repeat the same steps with increment in delivery pressure in equal intervals</h1>
+</div>
+
+
+<!--Step7	-->
+<div class="simsubscreen" id="canvas8" style="visibility:hidden">
+<center><h2>Characteristic Curves<h2></center></p>
+<span class="highlight" id="step7text1" style="border: 3px outset; position:absolute;top:60px; left:40px;cursor:pointer;">&nbsp;&nbsp;Rankine's Efficiency vs Lift to Fall Ratio&nbsp;&nbsp;</span>
+<span class="highlight" id="step7text2" style="border: 3px outset; position:absolute;top: 60px; left:350px;cursor:pointer;">&nbsp;&nbsp;D'Abuissons Efficiency vs Lift to Fall Ratio&nbsp;&nbsp;</span>
+
+<div id="chartContainer" style="height: 420px; width: 600px;margin-left:25px;margin-right:100px;margin-top:50px"></div>
+</div>
+
+
+<span id="formula" style = "background-color:black;color:white;visibility:hidden"></span>
+
+
+
+<!--next  Arrow	-->
+<div id="nav">
+	<img id="nextButton" onclick="navNext(); " src="images/Next.png" />
+</div>
+
+<!--Trial text	-->
+<div id="">
+<p id="trial" style="text-transform: uppercase;left:40px;top:100px;font-weight: bold;visibility:hidden"><strong>Trial = </strong></p>
+</div>
+
+<!-- formula display -->
+
+<!-- This is the questions division -->
+<span id="question-div">
+	 <p id="divq" style="font-family:verdana; font-size:14px;">Both ends of the pipe must be trimmed to ensure parallel faces.</p>
+	 <!-- <input type="button" style="cursor:pointer" value="OK" onclick = "evaluateAnswer();"> -->
+	 <p id="ans"></p>
+</span>
+
+<!--Blinking Arrow	-->
+<img class ="" id="arrow1" style="visibility:hidden" src="images/arrow1.png"/>
+
+<div id="copyright"> &copy; 2015 - <script>document.write(new Date().getFullYear())</script> SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
 </body>
 </html>

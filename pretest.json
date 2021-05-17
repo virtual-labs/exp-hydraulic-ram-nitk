@@ -1,0 +1,44 @@
+[{
+	"question": "A hydraulic ram is a device used to",
+	"answers": {
+		"a": "Store the energy of water",
+		"b": "Increase the pressure of water",
+		"c": "To lift water from deep wells",
+		"d": "To lift small quantity of water to a greater height when a large quantity of water is available at a smaller height"
+	},
+	"correctAnswer": "d"
+}, {
+	"question": "Maximum impulse will be developed on hydraulic ram when",
+	"answers": {
+		"a": "Supply pipe is long",
+		"b": "Ram chamber is large",
+		"c": "Supply pipe is short",
+		"d": "Waste valve closes suddenly"
+	},
+	"correctAnswer": "d"
+}, {
+	"question": "Too high delivery height causes",
+	"answers": {
+		"a": "Reduction in a delivery flow",
+		"b": "Reduction in efficiency of the pump",
+		"c": "All the above",
+		"d": "None of the above"
+	},
+	"correctAnswer": "c"
+}, {
+	"question": "Hydraulic ram is used to lift water from deep wells: (Say true or false)",
+	"answers": {
+		"a": "True",
+		"b": "False"
+	},
+	"correctAnswer": "a"
+}, {
+	"question": "Hydraulic ram acts as an _____ pump",
+	"answers": {
+		"a": "Reciprocating",
+		"b": "Impulse",
+		"c": "Centrifugal",
+		"d": "Parallel cylinder"
+	},
+	"correctAnswer": "b"
+}]

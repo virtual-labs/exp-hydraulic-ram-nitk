@@ -41,7 +41,7 @@
 </center>
 
 <center>Water Hammer Effect</center>
-<center>Source: Designing, Sizing, Construction and Maintenance of Gravity Fed Systems in Rural Areas, Module 6, Hydraulic Ram Systems</center>
+<center>Source: <a href="https://www.slideshare.net/niravdon/full-report-of-hydraulic-ramp-pump-53604068">https://www.slideshare.net/niravdon/full-report-of-hydraulic-ramp-pump-53604068</a></center>
 
 <h4 style="text-indent:50px;text-align:justify">Components of Hydraulic Ram</h4>
 
@@ -64,7 +64,7 @@
 </center><br>
 
 
-<p style="text-indent:50px;text-align:justify">Let Q be the discharge from the supply tank to the valve box and q be the discharge from the valve box to delivery tank. Also let h<sub>1</sub> and h<sub>2</sub> be the head of water in the supply tank and delivery tank respectively above valve box.</p>
+<p style="text-indent:50px;text-align:justify">Let Q be the discharge from the supply tank to the valve box and q be the discharge from the valve box to delivery tank. Also let h<sub>s</sub> and h<sub>d</sub> be the head of water in the supply tank and delivery tank respectively above valve box.</p>
 
 <p style="text-indent:50px;text-align:justify">Then the energy supplied by the supply tank is</p>
 <center>
